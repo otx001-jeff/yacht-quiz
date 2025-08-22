@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YP Quiz App</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>YP Quiz App</h1>
+    <nav>
+      <a href="/index.html">Home</a>
+      <a href="/admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="auth">
+      <div id="signed-out" class="card">
+        <h2>Sign in</h2>
+        <div id="g_id_signin"></div>
+        <p>Use your Google account to continue.</p>
+      </div>
+
+      <div id="signed-in" class="card" style="display:none;">
+        <div class="row">
+          <img id="avatar" alt="avatar" />
+          <div>
+            <h2 id="welcome">Welcome</h2>
+            <p>Email: <span id="email"></span></p>
+            <p>YP Balance: <strong id="balance">0</strong></p>
+          </div>
+        </div>
+        <button id="logout">Logout</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Quick Actions</h2>
+      <div class="grid">
+        <button id="btn-correct">Quiz: Correct (+10 YP)</button>
+        <button id="btn-wrong">Quiz: Wrong (-10 YP)</button>
+        <button id="btn-post">Post on Board (Costs YP)</button>
+        <button id="btn-chat">Send Chat (Costs YP)</button>
+        <button id="btn-spin">Roulette (Daily Free)</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Buy YP</h2>
+      <div class="grid">
+        <button class="buy" data-plan="one29">One-time 290 YP ($29)</button>
+        <button class="buy" data-plan="sub29">$29/mo (350 YP)</button>
+        <button class="buy" data-plan="sub59">$59/mo (740 YP)</button>
+        <button class="buy" data-plan="sub99">$99/mo (1290 YP)</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">© YP Quiz App</footer>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>\n<script>
+// Save referral code from ?ref= in localStorage for the next login
+const urlParams = new URLSearchParams(location.search);
+const ref = urlParams.get('ref');
+if(ref) localStorage.setItem('ref', ref);
+</script>\n

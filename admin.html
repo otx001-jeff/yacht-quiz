@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>Admin Panel</h1>
+    <nav>
+      <a href="/index.html">Home</a>
+      <a href="/admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Admin Login (Google)</h2>
+      <div id="admin-signed-out">
+        <div id="g_id_signin_admin"></div>
+        <p>Only the configured admin email can access controls.</p>
+      </div>
+      <div id="admin-signed-in" style="display:none;">
+        <p>Logged in as <span id="admin-email"></span></p>
+        <button id="admin-logout">Logout</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Settings</h2>
+      <div class="grid">
+        <label>Board Post Cost (YP): <input id="board-cost" type="number" /></label>
+        <label>Chat Message Cost (YP): <input id="chat-cost" type="number" /></label>
+        <label>Daily Roulette Limit: <input id="roulette-limit" type="number" /></label>
+        <button id="save-settings">Save Settings</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Send Message to User</h2>
+      <input id="target-email" placeholder="user@example.com" />
+      <input id="message-title" placeholder="Title" />
+      <textarea id="message-body" placeholder="Message..."></textarea>
+      <button id="send-message">Send</button>
+      <p class="hint">Demo: stores in DB as admin message log.</p>
+    </section>
+  </main>
+
+  <footer class="footer">© YP Quiz App</footer>
+  <script src="/admin.js" type="module"></script>
+</body>
+</html>
